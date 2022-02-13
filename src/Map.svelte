@@ -4,46 +4,37 @@
   import { select } from 'd3'
 
 	import Circles from './Circles.svelte';
+  import MapPath from './MapPath.svelte';
   import Modal from './Modal.svelte';
 	import { modal } from './stores.js';
 
   export let mapData;
   export let districtData;
 
+  let w, h;
 
-  let w;
-  let h;
-
-  let projection = geoAlbersUsa()
-  let path = geoPath(projection) 
+  $: projection = geoAlbersUsa().fitSize([w, h], mapData)
+  $: path = geoPath(projection)
 
 </script>
 
 <div bind:clientWidth={w} bind:clientHeight={h}>
+  Width: {w}
   <Modal show={$modal} transitionBgProps={{ duration: 0 }} styleCloseButton={{cursor: "pointer"}}>
     <svg
       width={w}
       height={h}
     >
-      <g class="map">
-        {#each mapData as feature}
-          <path
-            d={path(feature)}
-            fill="none"
-            stroke="gray"
-            stroke-width=1
-          />
-        {/each}
-      </g>
-      <g class="points">
-        <Circles data={districtData} />
-        {#each districtData as d}
+    <MapPath width={w} data={mapData} path={path}/>
+    <Circles width={w} data={districtData} projection={projection}/>
+
+        <!-- <Circles data={districtData} /> -->
+        <!-- {#each districtData as d}
           <text
             x={projection([d.long, d.lat])[0] + 13}
             y={projection([d.long, d.lat])[1] + 3}
           >{d.city}</text>
-        {/each}
-      </g>
+        {/each} -->
     </svg>
   </Modal>
 </div>

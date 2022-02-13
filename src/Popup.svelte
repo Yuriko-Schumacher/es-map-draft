@@ -1,11 +1,9 @@
 <script>
-  export let message = 'Details of the school district will show';
+  export let data;
 </script>
 
 <style>
-  p {
-		text-align: center;
-	}
 </style>
 
-<p> {message} </p>
+<h2> {data.district} </h2>
+{data.city}, {data.state}

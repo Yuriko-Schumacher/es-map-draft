@@ -11,7 +11,7 @@
 
   let districtsD = dataset[0]
   let timelineD = dataset[1]
-  let mapD = dataset[2].features
+  let mapD = dataset[2]
 
   districtsD.map(d => {
     d.lat = +d.lat;
