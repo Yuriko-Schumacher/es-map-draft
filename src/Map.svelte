@@ -26,7 +26,7 @@
       height={h}
     >
     <MapPath width={w} data={mapData} path={path}/>
-    <Circles width={w} data={districtData} projection={projection}/>
+    <Circles width={w} data={districtData} mapData={mapData} projection={projection} path={path}/>
     </svg>
   </Modal>
 </div>

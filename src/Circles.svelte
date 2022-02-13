@@ -7,8 +7,10 @@
   import Popup from './Popup.svelte';
 
   export let width;
+  export let mapData;
   export let data;
   export let projection;
+  export let path;
 
   const { open } = getContext('simple-modal');
   // const move = (cx, cy) => `transform: translate(${cx}px, ${cy}px)`;
@@ -18,7 +20,7 @@
   function showDistrictDetails() {
     let id = select(this).attr("id")
     let d = data.filter((d, i) => i == id)
-    open(Popup, { data: d[0] });
+    open(Popup, { data: d[0], projection: projection, path: path, mapData: mapData});
   }
   function handleMouseOver() {
     select(this).attr("r", rLarge)
