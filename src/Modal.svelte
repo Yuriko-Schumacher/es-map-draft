@@ -483,13 +483,13 @@
     max-height: 100%;
     margin: 2rem auto;
     color: black;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
     background: white;
   }
 
   .content {
     position: relative;
-    padding: 1rem;
+    padding: 1rem 2rem;
     max-height: calc(100vh - 4rem);
     overflow: auto;
   }
@@ -507,7 +507,7 @@
     height: 1.5rem;
     border: 0;
     color: black;
-    border-radius: 1.5rem;
+    border-radius: 0.1rem;
     background: white;
     box-shadow: 0 0 0 1px black;
     /* transition: transform 0.1s cubic-bezier(0.25, 0.1, 0.25, 1),
@@ -554,10 +554,10 @@
     background: white;
   }
 
-  .close:focus {
+  /* .close:focus {
     border-color: #3399ff;
     box-shadow: 0 0 0 2px #3399ff;
-  }
+  } */
 
   .close:active {
     transform: scale(0.9);

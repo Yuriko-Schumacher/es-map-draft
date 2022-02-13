@@ -7,7 +7,7 @@ import App from './App.svelte';
 // });
 
 function passCheck(){
-  let password = prompt("Please enter your password")
+  let password = prompt("Please enter password")
   if (password == "globeesmap") {
     const app = new App({
       target: document.body,

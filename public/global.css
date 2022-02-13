@@ -11,6 +11,11 @@
   font-style: normal;
 }
 
+:root {
+  --globe-blue: #005dc7;
+  --globe-gray: #767676;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -32,8 +37,19 @@ html, body {
   font-weight: 400;
   font-style: normal;
 }
+
 .font_primary.bold {
   font-family: 'BentonSansCond', Arial Narrow, Helvetica, sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+
+a:link, a:visited {
+  color: var(--globe-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--globe-gray);
+  border-bottom: 2px solid;
 }
