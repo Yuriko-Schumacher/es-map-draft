@@ -11,21 +11,35 @@
   export let projection;
 
   const { open } = getContext('simple-modal');
-  const move = (cx, cy) => `transform: translate(${cx}px, ${cy}px)`;
+  // const move = (cx, cy) => `transform: translate(${cx}px, ${cy}px)`;
 
   let rSmall, rLarge, simulation
   
   function showDistrictDetails() {
-    console.log(select(this).attr("id"))
     let id = select(this).attr("id")
     let d = data.filter((d, i) => i == id)
     open(Popup, { data: d[0] });
   }
   function handleMouseOver() {
     select(this).attr("r", rLarge)
+    let id = select(this).attr("id")
+    let thisD = data.filter((d, i) => i == id)[0]
+    let x = thisD.long < -80 
+            ? +select(this).attr("cx") + rSmall
+            : +select(this).attr("cx") - rSmall - 160
+    let y = +select(this).attr("cy") + rSmall
+
+    let tooltip = select('.tooltip')
+
+    tooltip
+      .style("display", "block")
+      .style("top", `${y}px`)
+      .style("left", `${x}px`)
+      .html(`${thisD.district}`)
   }
   function handleMouseOut() {
     select(this).attr("r", rSmall)
+    select('.tooltip').style("display", "none")
   }
 
   let circles = spring(data.map((d, i) => ({
@@ -40,8 +54,8 @@
   )
 
   $: if(width !== undefined) {  
-    rSmall = width / 150
-    rLarge = width / 75  
+    rSmall = width / 100
+    rLarge = width / 50
     simulation = forceSimulation(data)
       .force("collide", forceCollide().radius(rSmall * 1.1))
       .force(
@@ -70,9 +84,10 @@
         on:click={showDistrictDetails}
         on:mouseover={handleMouseOver}
         on:mouseout={handleMouseOut}
-        style={move(x, y)}
+        cx={x}
+        cy={y}
         r={rSmall}
-        fill="#C71B1B"
+        fill="#005dc7"
         fill-opacity=0.8
         id={id}
       ></circle>

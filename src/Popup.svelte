@@ -9,7 +9,5 @@
 <div class="study"></div>
 
 <style>
-  p {
-    line-height: 1.6;
-  }
+
 </style>
