@@ -9,7 +9,7 @@
     {#each data.features as feature}
       <path
         d={path(feature)}
-        fill="none"
+        fill="#eeeeee"
         stroke="gray"
         stroke-width={width / 800}
       />
