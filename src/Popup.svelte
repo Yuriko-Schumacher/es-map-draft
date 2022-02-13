@@ -5,5 +5,5 @@
 <style>
 </style>
 
-<h2> {data.district} </h2>
-{data.city}, {data.state}
+<h2>{data.district}</h2>
+{@html data.summary}
