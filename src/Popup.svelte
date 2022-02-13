@@ -2,8 +2,11 @@
   export let data;
 </script>
 
+<h2>{data.district}</h2>
+<div class="summary">{@html data.summary}</div>
+<div class="mini-map"></div>
+<div class="donut-chart"></div>
+<div class="study"></div>
+
 <style>
 </style>
-
-<h2>{data.district}</h2>
-{@html data.summary}
