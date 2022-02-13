@@ -53,3 +53,7 @@ a:hover {
   color: var(--globe-gray);
   border-bottom: 2px solid;
 }
+
+p {
+  line-height: 1.6;
+}
