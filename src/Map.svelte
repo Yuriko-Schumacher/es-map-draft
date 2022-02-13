@@ -19,7 +19,7 @@
 </script>
 
 <div bind:clientWidth={w} bind:clientHeight={h}>
-  Width: {w}
+  <!-- Width: {w} -->
   <Modal show={$modal} transitionBgProps={{ duration: 0 }} styleCloseButton={{cursor: "pointer"}}>
     <svg
       width={w}
@@ -27,14 +27,6 @@
     >
     <MapPath width={w} data={mapData} path={path}/>
     <Circles width={w} data={districtData} projection={projection}/>
-
-        <!-- <Circles data={districtData} /> -->
-        <!-- {#each districtData as d}
-          <text
-            x={projection([d.long, d.lat])[0] + 13}
-            y={projection([d.long, d.lat])[1] + 3}
-          >{d.city}</text>
-        {/each} -->
     </svg>
   </Modal>
 </div>
