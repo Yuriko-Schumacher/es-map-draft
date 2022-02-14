@@ -53,15 +53,18 @@
     display: flex;
     gap: 2rem;
   }
+
   div.right {
     flex: 0 0 250px;
     margin-right: 2rem;
   }
+
   div.mini-map {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .donut-title {
     font-size: 0.8rem;
     padding: 1.5rem 1rem 0.5rem 1rem;
@@ -69,9 +72,32 @@
     font-weight: bold;
     line-height: 1;
   }
+
   .source {
     font-size: 0.7rem;
     /* text-align: right; */
     color: gray;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    div.mini-map {
+      display: none;
+    }
+
+    div.container {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    div.donut-title {
+      text-align: left;
+    }
+
+    div.donut-chart {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
   }
 </style>

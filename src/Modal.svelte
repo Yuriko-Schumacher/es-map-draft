@@ -568,4 +568,10 @@
   .close:active {
     outline: none;
   }
+
+  @media only screen and (max-width: 600px) {
+    .content {
+      padding: 1rem 2rem;
+    }
+  }
 </style>
