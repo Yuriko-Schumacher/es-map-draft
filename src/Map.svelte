@@ -11,14 +11,15 @@
   export let mapData;
   export let districtData;
 
-  let w, h;
+  let w;
 
+  $: h = 5 * w / 9; 
   $: projection = geoAlbersUsa().fitSize([w, h], mapData)
   $: path = geoPath(projection)
 
 </script>
 
-<div class="container" bind:clientWidth={w} bind:clientHeight={h}>
+<div class="container" bind:clientWidth={w}>
   <div class="tooltip"></div>
   <Modal show={$modal} transitionBgProps={{ duration: 0 }} styleCloseButton={{cursor: "pointer"}}>
     <svg
@@ -33,7 +34,6 @@
 
 <style>
   div.container {
-    height: calc(100vh - 300px);
     margin-top: 1rem;
     position: relative;
   }
