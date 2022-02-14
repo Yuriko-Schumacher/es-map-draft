@@ -21,6 +21,7 @@
   <div class="left">
     <h2>{data.district}</h2>
     <div class="summary"><p>{@html data.summary}</p></div>
+    <div class="class-summary"><p>{@html data.study_summary}</p></div>
   </div>
   <div class="right">
     <div class="mini-map">
@@ -43,7 +44,6 @@
     </div>
   </div>
 </div>
-<div class="study"></div>
 
 <style>
   div.container {
