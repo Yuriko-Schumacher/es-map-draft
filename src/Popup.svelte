@@ -41,6 +41,9 @@
       <svg width=250 height=110>
         <DonutChart data={data}/>
       </svg>
+      <div class="source">
+        <em>Source: <a href="{data.source_link}" target="_blank">{data.source_text}</a></em>
+      </div>
     </div>
   </div>
 </div>
@@ -54,7 +57,7 @@
     flex: 0 0 250px;
     margin-right: 2rem;
   }
-  div.right > div {
+  div.mini-map {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,19 +69,9 @@
     font-weight: bold;
     line-height: 1;
   }
-  .donut-chart {
-    position: relative;
+  .source {
+    font-size: 0.7rem;
+    /* text-align: right; */
+    color: gray;
   }
-  /* .donut-tooltip {
-    background: rgba(255, 255, 255, 0.9);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    border: 1.5px solid black;
-    border-radius: 0.1rem;
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 0.3rem 0.5rem;
-  } */
 </style>
