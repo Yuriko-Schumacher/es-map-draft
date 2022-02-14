@@ -4,6 +4,7 @@
 
   import Title from './Title.svelte';
   import Map from './Map.svelte';
+  import Credit from './Credit.svelte'
 
   export let dataset;
   // export let districtsD;
@@ -31,6 +32,7 @@
 <div>
   <Title />
   <Map districtData={districtsD} mapData={mapD}/>
+  <Credit />
 </div>
 
 <style>
