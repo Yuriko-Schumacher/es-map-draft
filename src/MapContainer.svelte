@@ -11,8 +11,7 @@
   // export let timelineD;
 
   let districtsD = dataset[0]
-  let timelineD = dataset[1]
-  let mapD = dataset[2]
+  let mapD = dataset[1]
 
   districtsD.map(d => {
     d.lat = +d.lat;
@@ -25,8 +24,6 @@
     d.other = +d.other;
     d.sum = +d.sum;
   })
-
-  console.log(dataset)
 </script>
 
 <div>

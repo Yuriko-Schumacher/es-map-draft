@@ -20,21 +20,23 @@
 </script>
 
 <div class="container" bind:clientWidth={w}>
-  <div class="tooltip"></div>
-  <Modal show={$modal} transitionBgProps={{ duration: 0 }} styleCloseButton={{cursor: "pointer"}}>
-    <svg
-      width={w}
-      height={h}
-    >
-    <MapPath width={w} data={mapData} path={path}/>
-    <Circles width={w} data={districtData} mapData={mapData} projection={projection} path={path}/>
-    </svg>
-  </Modal>
+  {#if w !== undefined}
+    <div class="tooltip"></div>
+    <Modal show={$modal} transitionBgProps={{ duration: 0 }} styleCloseButton={{cursor: "pointer"}}>
+      <svg
+        width={w}
+        height={h}
+      >
+      <MapPath width={w} data={mapData} path={path}/>
+      <Circles width={w} data={districtData} mapData={mapData} projection={projection} path={path}/>
+      </svg>
+    </Modal>
+  {/if}
 </div>
 
 <style>
   div.container {
-    margin-top: 1rem;
+    margin: 2rem 0;
     position: relative;
   }
 

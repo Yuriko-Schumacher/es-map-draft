@@ -5,16 +5,14 @@
 
   export let datasets = [];
   let districtD = [];
-  let timelineD = []
   let mapD = [];
 
   let promise = getData();
 
   async function getData() {
     districtD = await csv("data/districts.csv");
-    timelineD = districtD;
     mapD = await json("data/us-states.geo.json");
-    datasets = [districtD, timelineD, mapD];
+    datasets = [districtD, mapD];
   }
 
 

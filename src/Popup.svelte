@@ -89,8 +89,13 @@
       gap: 0;
     }
 
+    div.right {
+      flex: 0 0 180px;
+    }
+
     div.donut-title {
       text-align: left;
+      padding: 1rem 0 0.5rem 0;
     }
 
     div.donut-chart {
